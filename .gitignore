@@ -2,5 +2,5 @@
 /logs/*
 /logs
 !/logs/README.md
-/public/vendor
+#/public/vendor
 #/data
