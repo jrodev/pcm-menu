@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>EMPLEADOS - TEST</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	{% block stylesheets %}
+    	{# Aquí incluimos los archivos CSS o CDN de CSS que usemos #}
+    	<link href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css" type="text/css" rel="stylesheet" />
+
+    	{# la función base_url() le indica a twig que busque desde el directorio raíz de proyecto #}
+    	<link href="{{ baseUrl() }}css/main.css" type="text/css" rel="stylesheet" />
+	{% endblock %}
+
+</head>
+<body>
+
+    <div class="container">
+        <header class="row">
+            <h3>EMPLEADOS</h3>
+        </header>
+
+        {% block content %}{% endblock %}
+
+        <footer class="row">
+            <p class="text-center">2017</p>
+        </footer>
+    </div>
+
+    {% block scripts %}
+    	{# Aqui incluimos los .js y otros scripts #}
+        <script> window.App = { baseUrl : "{{ baseUrl() }}" }; </script>
+        <script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+    	<script src="{{ baseUrl() }}js/main.js"></script>
+	{% endblock %}
+</body>
+</html>

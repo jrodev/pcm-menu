@@ -1,0 +1,66 @@
+{% extends 'layout/employees.twig' %}
+
+{% block content %}
+
+{% if id %}
+	<div class="row">
+		<div class="six columns">
+			<div><b>nombre</b> {{employee.name}}</div>
+			<div><b>Email</b> {{employee.email}}</div>
+			<div><b>Teléfono</b> {{employee.phone}}</div>
+			<div><b>Dirección</b> {{employee.address}}</div>
+			<div><b>Posición</b> {{employee.position}}</div>
+			<div><b>Salario</b> {{employee.salary}}</div>
+		</div>
+		<div class="six columns">
+			<b>Skills</b>
+			<ul>
+				{% for skill in employee.skills %}
+				<li>{{skill.skill}}</li>
+				{% endfor %}
+			</ul>
+		</div>
+	</div>
+{% else %}
+	<form id="formSendMail" method="post">
+		<div class="row">
+			<div class="three columns"><b>Buscar por E-mail:</b></div>
+			<div class="six columns">
+				<input id="inputEmail" class="u-full-width" name="email" type="email" value="{{email}}" placeholder="test@mailbox.com" />
+			</div>
+			<div class="three columns">
+				<input class="button-primary u-full-width" type="submit" value="BUSCAR" />
+			</div>
+		</div>
+	</form>
+	<div class="row">
+		<div class="twelve columns">
+			<table class="u-full-width">
+				<thead>
+					<tr>
+						<th>Nombre</th>
+						<th>Correo</th>
+						<th>Posición</th>
+						<th>Salario</th>
+						<th>Ver</th>
+					</tr>
+				</thead>
+				<tbody>
+					{# itera la tabla usuarios del modelo #}
+					{% for employee in employees %}
+					<tr>
+						<td>{{ employee.name }}</td>
+						<td>{{ employee.email }}</td>
+						<td>{{ employee.position }}</td>
+						<td>{{ employee.salary }}</td>
+						<td><a href="{{ baseUrl() }}empleados/listar/{{employee.id}}">ver</a></td>
+						{#<td><a href="{{ path_for('empleado.eliminar', {'id':employee.id}) }}">eliminar</a><td>#}
+					</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+		</div>
+	</div>
+{% endif %}
+
+{% endblock %}

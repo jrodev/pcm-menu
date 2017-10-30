@@ -1,0 +1,34 @@
+{% extends 'layout/home.twig' %}
+
+{% block content %}
+    <table class="u-full-width">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Class</th>
+          <th>Input</th>
+          <th>Output</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Libs\ChangeString</td>
+          <td>{{ChangeString.input}}</td>
+          <td>{{ChangeString.output}}</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Libs\CompleteRange</td>
+          <td>{{CompleteRange.input}}</td>
+          <td>{{CompleteRange.output}}</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Libs\ClearPar</td>
+          <td>{{ClearPar.input}}</td>
+          <td>{{ClearPar.output}}</td>
+        </tr>
+      </tbody>
+    </table>
+{% endblock %}
