@@ -51,7 +51,7 @@ if ($('#cocinaListaPlatos').length) {
                 , sDisabled = (oPlato.estado==2) ? 'disabled' : '';
             ;
             return `
-                <div class="panel-plato state${oPlato.estado} ${sHide}">
+                <div class="panel-plato columns state${oPlato.estado} ${sHide}">
                     <ul class="price">
                         <li class="header"><img class="plato-img" src="${oPlato.src}" width="100%" height="150px" /></li>
                         <li><span class='plato-name'>${oPlato.nombre}</span> - <b>Mesa #${oPlato.mesa}</b></li>
@@ -83,7 +83,7 @@ if ($('#cocinaListaPlatos').length) {
                 if(confirm('Plato: ' + namePlato + ', esta listo ?')){
                     socket.emit('servirplato', {cod:codPlato, estado:2});
                     $btnServido.addClass('disabled');
-                    $panelPlato.removeClass('state0 state1').addClass('state2');
+                    $panelPlato.removeClass('state0').removeClass('state1').addClass('state2');
                 }
             });
         }

@@ -73,14 +73,6 @@ $container['CocinaController'] = function ($c) {
 	return new App\Controllers\CocinaController($c['view'], $c['router'], $c['loadJson']);
 };
 
-$container['EmployeesController'] = function ($c) {
-	return new App\Controllers\EmployeesController($c['view'], $c['router'], $c['loadJson']);
-};
-
 $container['HomeController'] = function ($c) {
 	return new App\Controllers\HomeController($c['view'], $c['router'], $c['loadJson']);
-};
-
-$container['MenuController'] = function ($c) {
-	return new App\Controllers\MenuController($c['view'], $c['router'], $c['loadJson']);
 };

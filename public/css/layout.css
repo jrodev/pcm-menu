@@ -1,5 +1,7 @@
 .hide { display: none; }
 
+.btn-img>img:hover{ border:2px solid #999;}
+
 .panel-plato.state0 { background-color: #d0cfcf; }
 .panel-plato.state1 { /*background-color: #37ce9b;*/ }
 .panel-plato.state2 { background-color: #37ce9b; }

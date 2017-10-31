@@ -28,27 +28,8 @@ class HomeController
 
     public function index($req, $resp, $args)
     {
-        var_dump(getenv('APP_ENV'));
-        // echo "home!!";
-        // echo (new ChangeString)->build("cAB10Cefg1ooo9k");
-        // echo "<br>".implode('|', (new CompleteRange)->build([5,7,14]) );
-        $aViewParams = [
-            'ChangeString' => [
-                'input'=>'cAB10Cefg1ooo9k',
-                'output'=>(new ChangeString)->build("cAB10Cefg1ooo9k"),
-            ],
-            'CompleteRange' => [
-                'input'=>'[8,13,19,23]',
-                'output'=>'['.implode(',', (new CompleteRange)->build([8,13,19,23]) ).']',
-            ],
-            'ClearPar' => [
-                'input'=>'(()()()()(()))))())((())',
-                'output'=> implode('', (new ClearPar)->build('(()()()()(()))))())((())') ),
-            ]
-        ];
-
-        return $this->view->render($resp, 'views/home/index.twig', $aViewParams);
-
+        // -----
+        return $this->view->render($resp, 'views/home/index.twig');
     }
 
 }
