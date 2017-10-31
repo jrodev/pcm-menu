@@ -33,9 +33,9 @@
 			"Libs\\": "libs/"
 		}
     },
-	"scripts": {
-        "start": "php -S 0.0.0.0:8080 -t public public/index.php",
+    "scripts": {
+        "start": "php -S 0.0.0.0:8787 -t public public/index.php",
         "test": "phpunit"
-	}
+    }
 
 }

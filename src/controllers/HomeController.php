@@ -28,6 +28,7 @@ class HomeController
 
     public function index($req, $resp, $args)
     {
+        var_dump(getenv('APP_ENV'));
         // echo "home!!";
         // echo (new ChangeString)->build("cAB10Cefg1ooo9k");
         // echo "<br>".implode('|', (new CompleteRange)->build([5,7,14]) );
