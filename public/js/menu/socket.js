@@ -61,6 +61,8 @@ if ($('#cocinaListaPlatos').length) {
                                 data-platoid="${oPlato.id}"
                                 class="btn-servir-plato button ${sDisabled}">
                             servido!</a>
+                        </li>
+                        <li class="grey">
                             <a href="#"
                                 data-platocod="${oPlato.cod}"
                                 data-platoid="${oPlato.id}"
