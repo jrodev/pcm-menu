@@ -21,9 +21,10 @@ $container['logger'] = function ($c) {
 // Cargando motor de plantillas twig
 $container['view'] = function ($c) {
     //nos indica el directorio donde están las plantillas
-    $settings = $c->get('settings')['renderer'];
+    $settings = $c->get('settings');
+    $rendered = $settings['renderer'];
     // puede ser false o el directorio donde se guardará la cache
-    $view = new Slim\Views\Twig($settings['template_path'], ['cache' => false]);
+    $view = new Slim\Views\Twig($rendered['template_path'], ['cache' => false]);
 
     // Vie Helpers
     $twig = $view->getEnvironment();
@@ -32,10 +33,10 @@ $container['view'] = function ($c) {
     $twig->addGlobal('twigGlobalVar', 'Hi Global Var!');
 
     // Funcion Helper
-    $twig->addFunction(new Twig_SimpleFunction('baseUrl', function ($all=FALSE) {
+    $twig->addFunction(new Twig_SimpleFunction('baseUrl', function ($all=FALSE) use ($settings) {
         $strBaseUrl = sprintf(
             "%s://%s%s",
-            isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off' ? 'https' : 'http',
+            ( $settings['env']=='production' || (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS']!='off') ) ? 'https' : 'http',
             $_SERVER['HTTP_HOST'],
             $all ? $_SERVER['REQUEST_URI'] : "/"
         );
@@ -43,8 +44,8 @@ $container['view'] = function ($c) {
     }));
 
     // Function get Socket Url
-    $twig->addFunction(new Twig_SimpleFunction('socketUrl', function () {
-        $socketUrl = $c->get('settings')['socket-url'];
+    $twig->addFunction(new Twig_SimpleFunction('socketUrl', function () use ($settings) {
+        $socketUrl = $settings['socket-url'];
         return $socketUrl;
     }));
 
