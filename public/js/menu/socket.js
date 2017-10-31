@@ -1,4 +1,4 @@
-var socket = io.connect('https://socket-menu.herokuapp.com', {
+var socket = io.connect(SOCKET_URL, {
     'forceNew': true
 });
 
@@ -26,6 +26,6 @@ function addMessage(e) {
     };
 
     socket.emit('new-message', message);
-    
+
     return false;
 }

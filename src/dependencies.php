@@ -27,7 +27,11 @@ $container['view'] = function ($c) {
 
     // Vie Helpers
     $twig = $view->getEnvironment();
+
+    // Variable Global
     $twig->addGlobal('twigGlobalVar', 'Hi Global Var!');
+
+    // Funcion Helper
     $twig->addFunction(new Twig_SimpleFunction('baseUrl', function ($all=FALSE) {
         $strBaseUrl = sprintf(
             "%s://%s%s",
@@ -36,6 +40,12 @@ $container['view'] = function ($c) {
             $all ? $_SERVER['REQUEST_URI'] : "/"
         );
         return $strBaseUrl;
+    }));
+
+    // Function get Socket Url
+    $twig->addFunction(new Twig_SimpleFunction('socketUrl', function () {
+        $socketUrl = $c->get('settings')['socket-url'];
+        return $socketUrl;
     }));
 
     // instancia y añade la extensión especifica de slim

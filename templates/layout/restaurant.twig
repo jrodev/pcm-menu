@@ -3,8 +3,9 @@
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="https://socket-menu.herokuapp.com/socket.io/socket.io.js"></script>
-        <script src="{{ baseUrl() }}js/menu/socket.js"></script>
-        <link href="{{ baseUrl() }}css/layout.css" type="text/css" rel="stylesheet" />
+        <script>window["SOCKET_URL"]="{{ socketUrl() }}";</script>
+        <script src="//{{ baseUrl() }}js/menu/socket.js"></script>
+        <link href="//{{ baseUrl() }}css/layout.css" type="text/css" rel="stylesheet" />
     </head>
     <body>
         <hr />
