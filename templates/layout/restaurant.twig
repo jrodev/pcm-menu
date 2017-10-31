@@ -2,26 +2,18 @@
 <html>
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script src="https://socket-menu.herokuapp.com/socket.io/socket.io.js"></script>
-        <script>window["SOCKET_URL"]="{{ socketUrl() }}";</script>
-        <script src="{{ baseUrl() }}js/menu/socket.js"></script>
         <link href="{{ baseUrl() }}css/layout.css" type="text/css" rel="stylesheet" />
     </head>
     <body>
-        <hr />
-        <h1>My App</h1>
-        <div id="messages"></div>
-        <br/>
-        <form onsubmit="return addMessage(this)">
-          <input type="text" id="username" placeholder="Tu Nombre" >
-          <input type="text" id="texto" placeholder="Cuéntanos algo...">
-          <input type="submit" value="Enviar!">
-        </form>
-        <hr />
-        <h2 style="text-align:center">LISTA DE PLATOS</h2>
+        <h2 style="text-align:center">
+            {% block title %}{% endblock %}
+        </h2>
         <!--p style="text-align:center">Resize the browser window to see the effect.</p-->
 
         {% block content %}{% endblock %}
 
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+        {% block script %}{% endblock %}
     </body>
 </html>

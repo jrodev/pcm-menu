@@ -25,3 +25,5 @@ $app->get('/v1/employees/list/xml[/[{min}[/{max}[/]]]]', 'EmployeesController:li
 //});
 
 $app->get('/menu[/index[/]]', 'MenuController:index');
+
+$app->get('/cocina[/index[/]]', 'CocinaController:index');
