@@ -1,5 +1,31 @@
 .hide { display: none; }
 
+.my-container{ width:100%; max-width: 1000px; margin: 0 auto;}
+
+.columns {
+    float: left;
+    /*width: 33.3%;*/
+    /*max-width: 250px;*/
+    padding: 8px;
+}
+.columns li img { margin: 0 auto; height: 150px; }
+
+@media screen and (min-width: 750px) {
+    .columns {width: 25%;}
+}
+
+@media screen and (min-width: 600px) and (max-width: 750px) {
+    .columns {width: 33.3%;}
+}
+
+@media screen and (min-width: 400px) and (max-width: 600px) {
+    .columns {width: 50%;}
+}
+
+@media screen and (max-width: 400px) {
+    .columns {width: 100%;}
+}
+
 .btn-img>img:hover{ border:2px solid #999;}
 
 .panel-plato.state0 { background-color: #d0cfcf; }
@@ -9,11 +35,7 @@
 * {
     box-sizing: border-box;
 }
-.columns {
-    float: left;
-    width: 33.3%;
-    padding: 8px;
-}
+
 .price {
     list-style-type: none;
     border: 1px solid #eee;
@@ -57,8 +79,8 @@
 .btn-cancelar-plato { background-color: #ff8711; }
 
 
-@media only screen and (max-width: 600px) {
+/*@media only screen and (max-width: 600px) {
     .columns {
         width: 100%;
     }
-}
+}*/
