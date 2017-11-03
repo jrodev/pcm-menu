@@ -1,0 +1,16 @@
+{% extends 'layout/restaurant.twig' %}
+
+{% block title %}
+COLA DE PLATOS<br>
+<h4 style="text-align:center;">(Esperando pedidos de mozo...)</h4>
+{% endblock %}
+
+{% block content %}
+<div id="cocinaListaPlatos"></div>
+{% endblock %}
+
+{% block script %}
+<script src="https://socket-menu.herokuapp.com/socket.io/socket.io.js"></script>
+<script>window["SOCKET_URL"]="{{ socketUrl() }}";</script>
+<script src="{{ baseUrl() }}js/menu/socket.js"></script>
+{% endblock %}

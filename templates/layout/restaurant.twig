@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="{{ baseUrl() }}css/layout.css" type="text/css" rel="stylesheet" />
+    </head>
+    <body>
+        <h2 style="text-align:center">
+            {% block title %}{% endblock %}
+        </h2>
+        <!--p style="text-align:center">Resize the browser window to see the effect.</p-->
+        <div class="my-container">
+        {% block content %}{% endblock %}
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+        {% block script %}{% endblock %}
+    </body>
+</html>

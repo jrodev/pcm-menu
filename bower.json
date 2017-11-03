@@ -1,0 +1,33 @@
+{
+  "name": "pcm-test",
+  "description": "dependencias frontend",
+  "main": "public/index.php",
+  "authors": [
+    "Jaime Rodriguez <jrodev@yahoo.es>"
+  ],
+  "license": "MIT",
+  "homepage": "pcmtest.heroku.com",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/vendor",
+    "test",
+    "tests",
+    "source",
+    "spec",
+    ".bowerrc",
+    ".gitignore",
+    ".jshintignore",
+    ".jshintrc",
+    "bower.json",
+    "gruntfile.js",
+    "package.json",
+    "README.md"
+  ],
+  "devDependencies": {
+    "jquery": "3.2.1",
+    "skeleton": "skeleton-css#^2.0.4"
+  }
+}

@@ -1,0 +1,35 @@
+{% extends 'layout/restaurant.twig' %}
+
+{% block title %}LISTA DE PLATOS{% endblock %}
+
+{% block content %}
+<div id="mozoListaPlatos">
+    {% for key, food in foods %}
+        <div class="panel-plato columns">
+            <ul class="price">
+                <li class="header"><img class="plato-img" src="{{food.src}}" width="100%" height="150px" /></li>
+                <li><span class='plato-name'>{{food.nombre}}</span> - <b>{{food.precio}}</b></li>
+                <li>
+                    <select class="sel-nro-mesa">
+                        <option value="0">- elegir mesa -</option>
+                        {% for i in 1..10 %}
+                        <option value="{{ i }}">Mesa #{{ i }}</option>
+                        {% endfor %}
+                    </select>
+                </li>
+                <li class="grey">
+                    <a href="#" data-platoid="{{food.id}}" class="btn-pedir-plato button disabled">Pedir!</a>
+                </li>
+            </ul>
+        </div>
+    {% else %}
+        <h3>No data!!</h3>
+    {% endfor %}
+</div>
+{% endblock %}
+
+{% block script %}
+<script src="https://socket-menu.herokuapp.com/socket.io/socket.io.js"></script>
+<script>window["SOCKET_URL"]="{{ socketUrl() }}";</script>
+<script src="{{ baseUrl() }}js/menu/socket.js"></script>
+{% endblock %}

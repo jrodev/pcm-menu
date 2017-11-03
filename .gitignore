@@ -1,0 +1,6 @@
+/vendor/
+/logs/*
+/logs
+!/logs/README.md
+#/public/vendor
+#/data
