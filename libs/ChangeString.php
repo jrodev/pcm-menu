@@ -74,11 +74,3 @@ class ChangeString
 		return $resStr;
 	}
 }
-
-
-
-
-
-
-
-
